@@ -5,7 +5,12 @@
     <title> Loadup Application </title>
   </head>
   <body>
+    {% extends "template.html" %}
+    {% block content %}
+
     <h1> This is a Flask app </h1>
     <p> And somehow, it works </p>
+    
+    {% endblock %}
   </body>
 </html>
