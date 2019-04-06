@@ -1,9 +1,11 @@
 from flask import Flask, abort, render_template, send_file
+from flask import request
 app = Flask(__name__)
 
 @app.route("/index")
 def index():
-    return '<h1>Hello World!</h1>'
+    user_agent = request.headers.get('User-Agent')
+    return '<p>Your browser is {}</p>'.format(user_agent)
 app.add_url_rule('/', 'index', index)
 
 @app.route('/user/<name>')
